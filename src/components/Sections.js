@@ -406,7 +406,10 @@ export default function Sections({ activeSection, onContactSubmit }) {
               <img src="https://skillicons.dev/icons?i=python,js,ts,cpp,c,html,css,react,nextjs,nodejs,express,fastapi,flask" alt="Skills Stack Row 1" className="max-w-full h-auto" />
             </div>
             <div className="flex flex-wrap justify-center items-center gap-3 mt-3">
-              <img src="https://skillicons.dev/icons?i=postgres,mongodb,sqlite,redis,supabase,firebase,tailwind,git,github,linux,docker,postman,vscode,vercel" alt="Skills Stack Row 2" className="max-w-full h-auto" />
+              <img src="https://skillicons.dev/icons?i=postgres,mongodb,sqlite,redis,supabase,firebase,docker,kubernetes,aws,gcp,azure,git,github,linux,bash" alt="Skills Stack Row 2" className="max-w-full h-auto" />
+            </div>
+            <div className="flex flex-wrap justify-center items-center gap-3 mt-3">
+              <img src="https://skillicons.dev/icons?i=py,tensorflow,pytorch,opencv,postman,vscode,vercel,tailwind,bootstrap,figma" alt="Skills Stack Row 3" className="max-w-full h-auto" />
             </div>
           </div>
 
