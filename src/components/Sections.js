@@ -284,7 +284,7 @@ export default function Sections({ activeSection, onContactSubmit }) {
                 <h3 className="font-mono text-cyan-400 text-sm uppercase tracking-widest mb-4 flex items-center gap-2 font-black border-b border-cyan-500/20 pb-2">
                   <Award className="w-4 h-4" /> CREDENTIALS & MISSION OVERVIEW
                 </h3>
-                <p className="text-white text-base md:text-lg leading-relaxed mb-6 font-medium">
+                <p className="text-white text-base md:text-lg leading-relaxed mb-6 font-medium text-justify">
                   Hello! I am <strong className="text-cyan-300">Gulamgous Khan</strong>, a Full Stack AI/ML Engineer and Computer Science Engineering Graduate dedicated to architecting next-generation intelligent software. I combine modern MERN stack application design with state-of-the-art Generative AI frameworks, Agentic systems, and high-performance REST APIs.
                 </p>
 
