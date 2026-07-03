@@ -4,7 +4,7 @@
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00F0FF,45:070d19,100:000000&height=220&section=header&text=GULAMGOUS%20KHAN&fontSize=50&fontColor=00F0FF&fontAlign=50&fontAlignY=35" width="100%" alt="Header Banner" />
 
 <!-- Typing Subheader -->
-<img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&weight=800&size=24&duration=2000&pause=600&color=00F0FF&center=true&vCenter=true&width=1000&height=50&lines=GULAMGOUS.exe+INITIALIZED;FULL+STACK+AI+ENGINEER;CSE+GRADUATE;BUILDING+INTELLIGENT+SYSTEMS;" />
+<img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&weight=800&size=24&duration=2000&pause=600&color=00F0FF&center=true&vCenter=true&width=1000&height=50&lines=GULAMGOUS.exe+INITIALIZED;FULL+STACK+AI/ML+ENGINEER;CSE+GRADUATE;BUILDING+INTELLIGENT+SYSTEMS;" />
 
 </div>
 
@@ -20,7 +20,7 @@
 │ NEURAL CORE  : ACTIVE                      │
 │ AI MODULE    : ONLINE                       │
 │ SYSTEM STATE : RUNNING                     │
-│ MODE         : FULL STACK + AI             │
+│ MODE         : FULL STACK + AI/ML             │
 └────────────────────────────────────────────┘
 ```
 
@@ -37,7 +37,7 @@ ENTITY:
   Gulamgous Khan
 
 ROLE:
-  FULL STACK AI ENGINEER
+  FULL STACK AI/ML ENGINEER
 
 CURRENT MISSION:
   BUILDING INTELLIGENT SOFTWARE
@@ -64,8 +64,6 @@ GOAL:
 </div>
 
 ---
-
-### 🚀 NEURAL STACK
 
 ### 🚀 NEURAL STACK & TECH MATRIX
 
@@ -137,27 +135,30 @@ GOAL:
 ### 🌐 ARCHITECTURE TREE
 
 ```text
-                          GULAMGOUS KHAN
-                                │
-        ┌───────────────────────┴───────────────────────┐
-        │                                               │
-   FULL STACK                                    AI ENGINEERING
-        │                                               │
-        ├── Languages                                   ├── Foundations
-        │    ├── JavaScript / TypeScript                │    ├── LLM Apps & API Integrations
-        │    └── Python / C++                           │    └── Prompt Engineering
-        │                                               │
-        ├── Frameworks & Libraries                      ├── Cognitive Architectures
-        │    ├── React.js / Next.js                     │    ├── Agentic AI Systems
-        │    └── Node.js / Express.js                   │    └── RAG (Retrieval-Augmented)
-        │                                               │
-        ├── Mobile & Backend                            ├── Frameworks & DBs
-        │    ├── Flutter / Firebase                     │    ├── LangChain / LlamaIndex
-        │    └── REST APIs / JWT Auth                   │    └── Vector Databases (Pinecone)
-        │                                               │
-        └── Databases & Deploy                          └── NLP & Speech
-             ├── PostgreSQL / SQLite / MongoDB          └── Speech-to-Text / NLP Models
-             └── Vercel / Railway / Git
+                                           GULAMGOUS KHAN
+                                                 │
+        ┌────────────────────────────────────────┴────────────────────────────────────────┐
+        │                                                                                 │
+   FULL STACK DEVELOPMENT                                                         AI/ML ENGINEERING
+        │                                                                                 │
+        ├── 💻 Languages & Web Core                                                       ├── 🤖 Generative AI & LLMs
+        │    ├── JavaScript (ES6+) / TypeScript                                           │    ├── LLMs / RAG Architecture / Prompt Engineering
+        │    ├── Python / C++ / SQL                                                       │    ├── AI Agents / Autonomous Agentic Systems
+        │    └── HTML5 / CSS3 / Tailwind CSS                                              │    └── LangChain / LlamaIndex / Hugging Face
+        │                                                                                 │
+        ├── ⚡ Frameworks, Runtimes & APIs                                                ├── 📊 Machine Learning & Deep Learning
+        │    ├── React.js / Next.js (App Router)                                          │    ├── PyTorch / TensorFlow / Scikit-learn
+        │    ├── Node.js / Express.js / FastAPI / Flask                                   │    ├── Deep Learning / Neural Networks / MLOps
+        │    └── RESTful APIs / System Design                                             │    └── Data Analysis: NumPy / Pandas / Matplotlib
+        │                                                                                 │
+        ├── 💾 Databases & Data Layer                                                     ├── 👁️ Computer Vision & NLP
+        │    ├── Relational: PostgreSQL / SQLite / SQL / DBMS                             │    ├── Computer Vision: OpenCV
+        │    ├── NoSQL: MongoDB / Redis / Supabase                                        │    └── Natural Language Processing (NLP)
+        │    └── Vector DBs: FAISS / ChromaDB / Pinecone                                  │
+        │                                                                                 └── ☁️ Cloud, MLOps & DevOps
+        └── 🛠️ Tools & CS Foundations                                                          ├── Docker / Kubernetes / CI/CD Pipelines
+             ├── Git / GitHub / Linux / Bash                                              ├── Cloud: AWS / GCP / Azure
+             └── DSA / OOP / Operating Systems / Networks                                 └── Model Deployment & MLOps
 ```
 
 ---
