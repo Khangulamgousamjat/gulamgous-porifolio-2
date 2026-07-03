@@ -6,7 +6,7 @@ import {
   ExternalLink, Cpu, Brain, Database, Layers, GitBranch, Terminal, 
   Shield, Sparkles, Server, Zap, Target, BookOpen, Activity, Lock
 } from "lucide-react";
-import { useState } from "react";
+import { useState, memo } from "react";
 
 // Custom SVG Icons
 const GithubIcon = (props) => (
@@ -59,7 +59,7 @@ const LeetCodeIcon = (props) => (
   </svg>
 );
 
-export default function Sections({ activeSection, onContactSubmit }) {
+function Sections({ activeSection, onContactSubmit }) {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
 
@@ -403,13 +403,13 @@ export default function Sections({ activeSection, onContactSubmit }) {
               // REPOSITORY TECH STACK (LIVE ICONS)
             </h3>
             <div className="flex flex-wrap justify-center items-center gap-3">
-              <img src="https://skillicons.dev/icons?i=python,js,ts,cpp,c,html,css,react,nextjs,nodejs,express,fastapi,flask" alt="Skills Stack Row 1" className="max-w-full h-auto" />
+              <img src="https://skillicons.dev/icons?i=python,js,ts,cpp,c,html,css,react,nextjs,nodejs,express,fastapi,flask" alt="Skills Stack Row 1" width="640" height="48" loading="lazy" decoding="async" className="max-w-full h-auto" />
             </div>
             <div className="flex flex-wrap justify-center items-center gap-3 mt-3">
-              <img src="https://skillicons.dev/icons?i=postgres,mongodb,sqlite,redis,supabase,firebase,docker,kubernetes,aws,gcp,azure,git,github,linux,bash" alt="Skills Stack Row 2" className="max-w-full h-auto" />
+              <img src="https://skillicons.dev/icons?i=postgres,mongodb,sqlite,redis,supabase,firebase,docker,kubernetes,aws,gcp,azure,git,github,linux,bash" alt="Skills Stack Row 2" width="740" height="48" loading="lazy" decoding="async" className="max-w-full h-auto" />
             </div>
             <div className="flex flex-wrap justify-center items-center gap-3 mt-3">
-              <img src="https://skillicons.dev/icons?i=py,tensorflow,pytorch,opencv,postman,vscode,vercel,tailwind,bootstrap,figma" alt="Skills Stack Row 3" className="max-w-full h-auto" />
+              <img src="https://skillicons.dev/icons?i=py,tensorflow,pytorch,opencv,postman,vscode,vercel,tailwind,bootstrap,figma" alt="Skills Stack Row 3" width="500" height="48" loading="lazy" decoding="async" className="max-w-full h-auto" />
             </div>
           </div>
 
@@ -677,11 +677,19 @@ export default function Sections({ activeSection, onContactSubmit }) {
               <img 
                 src="https://github-readme-stats-eight-theta.vercel.app/api?username=khangulamgousamjat&show_icons=true&theme=tokyonight&hide_border=true&bg_color=000000&title_color=00F0FF&icon_color=00F0FF&text_color=ffffff" 
                 alt="GitHub Stats" 
+                width="495"
+                height="195"
+                loading="lazy"
+                decoding="async"
                 className="max-w-full h-auto rounded-xl border border-white/10"
               />
               <img 
                 src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs?username=khangulamgousamjat&layout=compact&theme=tokyonight&hide_border=true&bg_color=000000&title_color=00F0FF&text_color=ffffff" 
                 alt="Top Languages" 
+                width="300"
+                height="195"
+                loading="lazy"
+                decoding="async"
                 className="max-w-full h-auto rounded-xl border border-white/10"
               />
             </div>
@@ -874,3 +882,6 @@ export default function Sections({ activeSection, onContactSubmit }) {
     </div>
   );
 }
+
+export default memo(Sections);
+

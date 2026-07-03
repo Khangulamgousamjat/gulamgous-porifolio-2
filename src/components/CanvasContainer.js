@@ -12,14 +12,14 @@ const Scene = dynamic(() => import("./Scene"), {
   ),
 });
 
-export default function CanvasContainer({ activeSection, scrollProgress, mouseX, mouseY }) {
+export default function CanvasContainer({ activeSection, scrollProgressRef, isPullbackRef, mouseRef }) {
   return (
     <div className="fixed inset-0 w-screen h-screen z-0 pointer-events-none">
       <Scene 
         activeSection={activeSection} 
-        scrollProgress={scrollProgress}
-        mouseX={mouseX}
-        mouseY={mouseY}
+        scrollProgressRef={scrollProgressRef}
+        isPullbackRef={isPullbackRef}
+        mouseRef={mouseRef}
       />
     </div>
   );

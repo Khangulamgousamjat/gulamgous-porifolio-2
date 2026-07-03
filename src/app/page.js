@@ -1,50 +1,68 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 import LoadingScreen from "@/components/LoadingScreen";
 import CustomCursor from "@/components/CustomCursor";
 import Navbar from "@/components/Navbar";
 import CanvasContainer from "@/components/CanvasContainer";
 import Sections from "@/components/Sections";
-import { motion, AnimatePresence } from "framer-motion";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [activeSection, setActiveSection] = useState("hero");
-  const [scrollProgress, setScrollProgress] = useState(0);
-  const [mouse, setMouse] = useState({ x: 0, y: 0 });
-  const [isPullback, setIsPullback] = useState(false);
+  
+  const mouseRef = useRef({ x: 0, y: 0 });
+  const scrollProgressRef = useRef(0);
+  const isPullbackRef = useRef(false);
+  const activeSectionRef = useRef("hero");
+  const tickingRef = useRef(false);
 
-  // Track mouse coordinates for 3D parallax
+  // Sync activeSectionRef
+  useEffect(() => {
+    activeSectionRef.current = activeSection;
+  }, [activeSection]);
+
+  // Track mouse coordinates for 3D parallax without triggering React state re-renders
   useEffect(() => {
     const handleMouseMove = (e) => {
-      setMouse({ x: e.clientX, y: e.clientY });
+      mouseRef.current = { x: e.clientX, y: e.clientY };
     };
-    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
-  // Track scroll details
+  // Track scroll details throttled via requestAnimationFrame
   useEffect(() => {
     if (isLoading) return;
 
     const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const winHeight = window.innerHeight;
-      const docHeight = document.documentElement.scrollHeight - winHeight;
-      
-      // Calculate overall scroll progress (0.0 to 5.0 matches 6 sections)
-      // We divide scrollY by viewport height to get fractional section indices
-      const progress = scrollY / winHeight;
-      setScrollProgress(progress);
+      if (!tickingRef.current) {
+        tickingRef.current = true;
+        requestAnimationFrame(() => {
+          const scrollY = window.scrollY;
+          const winHeight = window.innerHeight || 1;
+          
+          // Calculate overall scroll progress (0.0 to 5.0 matches 6 sections)
+          const progress = scrollY / winHeight;
+          scrollProgressRef.current = progress;
 
-      // Determine current section ID
-      const sections = ["hero", "about", "skills", "projects", "timeline", "contact"];
-      const index = Math.min(
-        Math.floor((scrollY + winHeight / 2) / winHeight),
-        sections.length - 1
-      );
-      setActiveSection(sections[index]);
+          // Determine current section ID
+          const sections = ["hero", "about", "skills", "projects", "timeline", "contact"];
+          const index = Math.min(
+            Math.floor((scrollY + winHeight / 2) / winHeight),
+            sections.length - 1
+          );
+          const newSection = sections[index];
+
+          // Only trigger React state update if the section index actually changed
+          if (newSection !== activeSectionRef.current) {
+            activeSectionRef.current = newSection;
+            setActiveSection(newSection);
+          }
+
+          tickingRef.current = false;
+        });
+      }
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -54,18 +72,17 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isLoading]);
 
-  const handleNavigate = (sectionId) => {
+  const handleNavigate = useCallback((sectionId) => {
     const el = document.getElementById(sectionId);
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
     }
-  };
+  }, []);
 
-  const handleContactSubmit = () => {
+  const handleContactSubmit = useCallback(() => {
     // Trigger cinematic camera pullback at ending
-    setIsPullback(true);
-    // Smoothly scroll down a bit more or pull back camera
-  };
+    isPullbackRef.current = true;
+  }, []);
 
   return (
     <main className="relative min-h-screen bg-[#030014] overflow-x-hidden selection:bg-cyan-500/30 selection:text-cyan-200">
@@ -83,9 +100,9 @@ export default function Home() {
           {/* 3D background world */}
           <CanvasContainer 
             activeSection={activeSection}
-            scrollProgress={isPullback ? scrollProgress + 1.5 : scrollProgress}
-            mouseX={mouse.x}
-            mouseY={mouse.y}
+            scrollProgressRef={scrollProgressRef}
+            isPullbackRef={isPullbackRef}
+            mouseRef={mouseRef}
           />
 
           {/* Core HTML Sections Overlay */}
@@ -114,3 +131,4 @@ export default function Home() {
     </main>
   );
 }
+
