@@ -201,7 +201,7 @@ export default function Sections({ activeSection, onContactSubmit }) {
             variants={itemVariants}
             className="font-mono text-cyan-200 text-base md:text-xl tracking-wider mb-6 font-bold bg-black/60 py-2 px-6 rounded-full inline-block border border-cyan-500/30 shadow-[0_0_20px_rgba(34,211,238,0.15)]"
           >
-            FULL STACK AI ENGINEER // CSE GRADUATE
+            FULL STACK AI/ML ENGINEER // CSE GRADUATE
           </motion.div>
 
           <motion.p
@@ -285,7 +285,7 @@ export default function Sections({ activeSection, onContactSubmit }) {
                   <Award className="w-4 h-4" /> CREDENTIALS & MISSION OVERVIEW
                 </h3>
                 <p className="text-white text-base md:text-lg leading-relaxed mb-6 font-medium">
-                  Hello! I am <strong className="text-cyan-300">Gulamgous Khan</strong>, a Full Stack AI Engineer and Computer Science Engineering Graduate dedicated to architecting next-generation intelligent software. I combine modern MERN stack application design with state-of-the-art Generative AI frameworks, Agentic systems, and high-performance REST APIs.
+                  Hello! I am <strong className="text-cyan-300">Gulamgous Khan</strong>, a Full Stack AI/ML Engineer and Computer Science Engineering Graduate dedicated to architecting next-generation intelligent software. I combine modern MERN stack application design with state-of-the-art Generative AI frameworks, Agentic systems, and high-performance REST APIs.
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
@@ -349,7 +349,7 @@ export default function Sections({ activeSection, onContactSubmit }) {
                   </div>
                   <div className="flex justify-between border-b border-white/5 pb-1">
                     <span className="text-zinc-500 font-bold">ROLE:</span>
-                    <span className="text-purple-300 font-bold">Full Stack AI Engineer</span>
+                    <span className="text-purple-300 font-bold">Full Stack AI/ML Engineer</span>
                   </div>
                   <div className="flex justify-between border-b border-white/5 pb-1">
                     <span className="text-zinc-500 font-bold">SYSTEM STATE:</span>
