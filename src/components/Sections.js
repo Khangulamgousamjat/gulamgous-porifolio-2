@@ -403,10 +403,10 @@ export default function Sections({ activeSection, onContactSubmit }) {
               // REPOSITORY TECH STACK (LIVE ICONS)
             </h3>
             <div className="flex flex-wrap justify-center items-center gap-3">
-              <img src="https://skillicons.dev/icons?i=python,js,react,nodejs,express,postgres,git,github,linux,postman,vscode,vercel" alt="Skills Stack Row 1" className="max-w-full h-auto" />
+              <img src="https://skillicons.dev/icons?i=python,js,ts,cpp,c,html,css,react,nextjs,nodejs,express,fastapi,flask" alt="Skills Stack Row 1" className="max-w-full h-auto" />
             </div>
             <div className="flex flex-wrap justify-center items-center gap-3 mt-3">
-              <img src="https://skillicons.dev/icons?i=html,css,cpp,c,sqlite,nextjs,ts" alt="Skills Stack Row 2" className="max-w-full h-auto" />
+              <img src="https://skillicons.dev/icons?i=postgres,mongodb,sqlite,redis,supabase,firebase,tailwind,git,github,linux,docker,postman,vscode,vercel" alt="Skills Stack Row 2" className="max-w-full h-auto" />
             </div>
           </div>
 
@@ -470,7 +470,7 @@ export default function Sections({ activeSection, onContactSubmit }) {
               <div className="space-y-4 font-mono text-xs">
                 <div className="p-3 rounded-xl bg-cyan-950/40 border border-cyan-500/20">
                   <span className="text-cyan-300 font-bold block mb-1">💻 FULL STACK ENGINEERING</span>
-                  <p className="text-zinc-300">JS/TS, Python, C++ • React, Next.js, Node.js, Express • Postgres, MongoDB, SQLite • Vercel, Railway, Git</p>
+                  <p className="text-zinc-300">JS/TS, Python, C++ • React, Next.js, Node.js, Express, FastAPI • Postgres, MongoDB, SQLite • Vercel, Railway, Git</p>
                 </div>
 
                 <div className="p-3 rounded-xl bg-purple-950/40 border border-purple-500/20">
@@ -480,6 +480,83 @@ export default function Sections({ activeSection, onContactSubmit }) {
               </div>
             </motion.div>
 
+          </div>
+
+          {/* Interactive AI/ML & Full Stack Technology Matrix Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {[
+              { 
+                name: "Generative AI & LLMs", 
+                category: "Agentic Systems, RAG Pipelines, LangChain & LlamaIndex", 
+                level: "Expert", 
+                color: "cyan",
+                sub: "OpenAI, Gemini API, Vector DBs"
+              },
+              { 
+                name: "Machine Learning & DL", 
+                category: "TensorFlow, PyTorch, Scikit-Learn & Computer Vision", 
+                level: "Advanced", 
+                color: "purple",
+                sub: "Neural Nets, NLP, Model Fine-Tuning"
+              },
+              { 
+                name: "MERN & Web Architecture", 
+                category: "React.js, Next.js, Node.js, Express.js & REST APIs", 
+                level: "Expert", 
+                color: "cyan",
+                sub: "SSR/SSG, Tailwind, State Mgmt"
+              },
+              { 
+                name: "Databases & Vector DBs", 
+                category: "PostgreSQL, MongoDB, Pinecone, SQLite & Redis", 
+                level: "Advanced", 
+                color: "purple",
+                sub: "ORM/ODMs, Vector Embeddings"
+              },
+              { 
+                name: "Python & Backend Systems", 
+                category: "Python 3.10+, FastAPI, Flask, Asyncio & WebSockets", 
+                level: "Expert", 
+                color: "cyan",
+                sub: "Microservices & API Security"
+              },
+              { 
+                name: "DevOps & Cloud Tools", 
+                category: "Git, GitHub, Linux, Docker, Vercel & Postman", 
+                level: "Advanced", 
+                color: "purple",
+                sub: "CI/CD Pipelines, Deployment"
+              },
+            ].map((skill, index) => (
+              <motion.div
+                key={skill.name}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.08 }}
+                className={`p-6 rounded-xl border-2 bg-black/95 backdrop-blur-2xl shadow-[0_10px_30px_rgba(0,0,0,0.8)] transition-all cursor-pointer ${
+                  skill.color === "cyan" 
+                    ? "border-cyan-500/30 hover:border-cyan-400 hover:shadow-[0_0_25px_rgba(34,211,238,0.25)]" 
+                    : "border-purple-500/30 hover:border-purple-400 hover:shadow-[0_0_25px_rgba(168,85,247,0.25)]"
+                }`}
+                data-interactive
+              >
+                <div className="font-mono text-xs text-zinc-500 font-bold mb-1.5 flex items-center justify-between">
+                  <span>NODE ID 0{index + 1}</span>
+                  <span className={`text-[10px] uppercase font-bold tracking-widest ${skill.color === "cyan" ? "text-cyan-400" : "text-purple-400"}`}>
+                    {skill.sub}
+                  </span>
+                </div>
+                <div className="font-black text-white text-lg md:text-xl mb-1.5">{skill.name}</div>
+                <div className="text-xs text-zinc-300 leading-normal mb-3 font-semibold">{skill.category}</div>
+                <div className="flex items-center gap-2">
+                  <div className={`w-2 h-2 rounded-full ${skill.color === "cyan" ? "bg-cyan-400 animate-ping" : "bg-purple-400 animate-pulse"}`} />
+                  <span className={`font-mono text-[10px] uppercase tracking-widest font-black ${skill.color === "cyan" ? "text-cyan-300" : "text-purple-300"}`}>
+                    {skill.level} STATUS
+                  </span>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
