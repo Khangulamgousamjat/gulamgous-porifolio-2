@@ -180,6 +180,64 @@ GOAL:
 
 ---
 
+### 💻 WEB PORTFOLIO SYSTEM & SETUP
+
+<div align="center">
+
+```txt
+┌───────────────────────────────────────────────────────────┐
+│ APPLICATION  : GULAMGOUS KHAN 3D NEURAL PORTFOLIO WEB     │
+│ CORE ENGINE  : NEXT.JS 16 (APP ROUTER) + REACT 19          │
+│ GRAPHICS     : THREE.JS + REACT THREE FIBER (@R3F)        │
+│ ANIMATIONS   : GSAP + FRAMER MOTION                       │
+│ STYLING      : TAILWIND CSS V4                             │
+└───────────────────────────────────────────────────────────┘
+```
+
+</div>
+
+#### ⚡ Web Features & Highlights
+- 🌌 **Interactive 3D Neural Core**: Real-time 3D particle canvas and geometric shapes powered by Three.js & R3F (`Scene.js`).
+- ⚡ **Cyberpunk Loading Diagnostics**: Interactive preloader with real-time system check sequence (`LoadingScreen.js`).
+- 🎯 **Cyber Core Custom Cursor**: Custom animated particle cursor response system (`CustomCursor.js`).
+- 🚀 **Smooth GSAP & Framer Motion Animations**: High-performance scroll-driven section transitions and HUD metrics (`Sections.js`).
+- 📱 **Fully Responsive Layout**: Built with Tailwind CSS v4, supporting dynamic displays from mobile devices to ultra-wide monitors.
+
+#### 🛠️ Getting Started & Local Development
+
+To run this portfolio website locally on your system:
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/Khangulamgousamjat/gulamgous-portfolio.git
+
+# 2. Navigate into the project directory
+cd gulamgous-portfolio
+
+# 3. Install dependencies
+npm install
+
+# 4. Start the local development server
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
+
+#### 📦 Web Scripts Summary
+
+<div align="center">
+
+| Command | Action |
+| :--- | :--- |
+| `npm run dev` | Starts Next.js development server on `localhost:3000` |
+| `npm run build` | Builds optimized production bundle |
+| `npm run start` | Runs the compiled production server |
+| `npm run lint` | Runs ESLint to check code quality |
+
+</div>
+
+---
+
 ### 🎯 CURRENT FOCUS
 
 <div align="center">
