@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { 
   Mail, ChevronDown, Award, Briefcase, Code, User, Send, CheckCircle, 
   ExternalLink, Cpu, Brain, Database, Layers, GitBranch, Terminal, 
-  Shield, Sparkles, Server, Zap, Target, BookOpen, Activity, Lock
+  Shield, Sparkles, Server, Zap, Target, BookOpen, Activity, Lock, X
 } from "lucide-react";
 import { useState, memo } from "react";
 
@@ -62,6 +62,7 @@ const LeetCodeIcon = (props) => (
 function Sections({ activeSection, onContactSubmit }) {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [isImageModalOpen, setIsImageModalOpen] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -284,9 +285,69 @@ function Sections({ activeSection, onContactSubmit }) {
                 <h3 className="font-mono text-cyan-400 text-sm uppercase tracking-widest mb-4 flex items-center gap-2 font-black border-b border-cyan-500/20 pb-2">
                   <Award className="w-4 h-4" /> CREDENTIALS & MISSION OVERVIEW
                 </h3>
-                <p className="text-white text-base md:text-lg leading-relaxed mb-6 font-medium text-justify">
-                  Hello! I am <strong className="text-cyan-300">Gulamgous Khan</strong>, a Full Stack AI/ML Engineer and Computer Science Engineering Graduate dedicated to architecting next-generation intelligent software. I combine modern MERN stack application design with state-of-the-art Generative AI frameworks, Agentic systems, and high-performance REST APIs.
-                </p>
+                
+                <div className="flex flex-col md:flex-row gap-6 items-center md:items-start mb-6">
+                  <div 
+                    className="relative group shrink-0 cursor-zoom-in"
+                    onClick={() => setIsImageModalOpen(true)}
+                  >
+                    <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-400 to-purple-600 rounded-2xl blur opacity-40 group-hover:opacity-100 transition duration-500 group-hover:duration-200 animate-pulse"></div>
+                    <div className="relative w-36 h-36 md:w-44 md:h-44 rounded-2xl overflow-hidden border-2 border-cyan-400/50 bg-black flex items-center justify-center">
+                      <img 
+                        src="/image.jpg" 
+                        alt="Gulamgous Khan" 
+                        className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-500"
+                      />
+                      {/* Interactive magnifying glass hover icon */}
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/45 transition-colors duration-300 flex items-center justify-center">
+                        <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-mono text-[10px] text-cyan-300 font-black tracking-widest uppercase bg-black/80 px-2.5 py-1 rounded border border-cyan-400/40">
+                          ZOOM
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex-1">
+                    <p className="text-white text-base md:text-lg leading-relaxed font-medium text-justify">
+                      Hello! I am <strong className="text-cyan-300">Gulamgous Khan</strong>, a Full Stack AI/ML Engineer and Computer Science Engineering Graduate dedicated to architecting next-generation intelligent software. I combine modern MERN stack application design with state-of-the-art Generative AI frameworks, Agentic systems, and high-performance REST APIs.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Full-screen Lightbox Modal */}
+                {isImageModalOpen && (
+                  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md transition-opacity duration-300">
+                    <button 
+                      onClick={() => setIsImageModalOpen(false)}
+                      className="absolute top-6 right-6 p-3 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white hover:text-cyan-400 transition-colors duration-200 cursor-pointer z-50 shadow-lg"
+                      aria-label="Close modal"
+                    >
+                      <X className="w-6 h-6" />
+                    </button>
+                    <div 
+                      className="absolute inset-0 cursor-zoom-out" 
+                      onClick={() => setIsImageModalOpen(false)}
+                    />
+                    <motion.div 
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.9 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                      className="relative z-10 max-w-4xl max-h-[85vh] p-4 flex flex-col items-center justify-center"
+                    >
+                      <div className="relative rounded-2xl overflow-hidden border-2 border-cyan-400 shadow-[0_0_50px_rgba(34,211,238,0.3)]">
+                        <img 
+                          src="/image.jpg" 
+                          alt="Gulamgous Khan - Full" 
+                          className="max-w-full max-h-[70vh] md:max-h-[75vh] object-contain rounded-xl"
+                        />
+                      </div>
+                      <div className="mt-4 font-mono text-[10px] md:text-xs text-cyan-300 font-bold uppercase tracking-widest bg-black/60 py-2 px-6 rounded-full border border-cyan-500/20 shadow-md">
+                        GULAMGOUS KHAN // PROFILE ARTIFACT
+                      </div>
+                    </motion.div>
+                  </div>
+                )}
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
                   <div className="p-4 rounded-xl bg-cyan-950/40 border border-cyan-500/20">
