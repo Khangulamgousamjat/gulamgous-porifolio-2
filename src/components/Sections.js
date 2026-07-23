@@ -183,7 +183,7 @@ function Sections({ activeSection, onContactSubmit }) {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.15 }}
           className="text-center max-w-4xl"
         >
           <motion.div variants={itemVariants} className="inline-block px-4 py-1.5 rounded-full border border-cyan-400/60 bg-cyan-950/70 mb-6 shadow-[0_0_25px_rgba(34,211,238,0.35)]">
@@ -284,9 +284,10 @@ function Sections({ activeSection, onContactSubmit }) {
             <motion.div
               initial={{ x: -50, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="md:col-span-2 p-8 rounded-2xl border-2 border-cyan-500/30 bg-[#040409]/95 backdrop-blur-2xl shadow-[0_15px_50px_rgba(0,0,0,0.9)] flex flex-col justify-between"
+              viewport={{ once: false, amount: 0.15 }}
+              transition={{ type: "spring", stiffness: 100, damping: 15 }}
+              whileHover={{ scale: 1.01 }}
+              className="md:col-span-2 p-8 rounded-2xl border-2 border-cyan-500/30 bg-[#040409]/95 backdrop-blur-2xl shadow-[0_15px_50px_rgba(0,0,0,0.9)] hover:border-cyan-400 hover:shadow-[0_0_35px_rgba(34,211,238,0.2)] transition-all flex flex-col justify-between"
             >
               <div>
                 <h3 className="font-mono text-cyan-400 text-sm uppercase tracking-widest mb-4 flex items-center gap-2 font-black border-b border-cyan-500/20 pb-2">
@@ -396,11 +397,12 @@ function Sections({ activeSection, onContactSubmit }) {
 
             {/* Right Card: Details & AI Modules */}
             <motion.div
-              initial={{ x: 50, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="p-8 rounded-2xl border-2 border-purple-500/30 bg-[#040409]/95 backdrop-blur-2xl shadow-[0_15px_50px_rgba(0,0,0,0.9)] space-y-6"
+               initial={{ x: 50, opacity: 0 }}
+               whileInView={{ x: 0, opacity: 1 }}
+               viewport={{ once: false, amount: 0.15 }}
+               transition={{ type: "spring", stiffness: 100, damping: 15 }}
+               whileHover={{ scale: 1.01 }}
+               className="p-8 rounded-2xl border-2 border-purple-500/30 bg-[#040409]/95 backdrop-blur-2xl shadow-[0_15px_50px_rgba(0,0,0,0.9)] hover:border-purple-400 hover:shadow-[0_0_35px_rgba(168,85,247,0.2)] transition-all space-y-6"
             >
               <div>
                 <h3 className="font-mono text-purple-400 text-xs uppercase tracking-widest mb-3 font-black border-b border-purple-500/20 pb-1">
@@ -488,9 +490,10 @@ function Sections({ activeSection, onContactSubmit }) {
             <motion.div
               initial={{ y: 30, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="p-8 rounded-2xl border-2 border-amber-500/30 bg-black/95 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.9)]"
+              viewport={{ once: false, amount: 0.15 }}
+              transition={{ type: "spring", stiffness: 100, damping: 15 }}
+              whileHover={{ y: -5, scale: 1.01 }}
+              className="p-8 rounded-2xl border-2 border-amber-500/30 bg-black/95 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.9)] hover:border-amber-400 hover:shadow-[0_0_35px_rgba(245,158,11,0.2)] transition-all"
             >
               <div className="flex items-center justify-between border-b border-amber-500/20 pb-3 mb-6">
                 <h3 className="font-mono text-amber-400 text-sm uppercase tracking-widest font-black flex items-center gap-2">
@@ -528,9 +531,10 @@ function Sections({ activeSection, onContactSubmit }) {
             <motion.div
               initial={{ y: 30, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="p-8 rounded-2xl border-2 border-cyan-500/30 bg-black/95 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.9)]"
+              viewport={{ once: false, amount: 0.15 }}
+              transition={{ type: "spring", stiffness: 100, damping: 15, delay: 0.1 }}
+              whileHover={{ y: -5, scale: 1.01 }}
+              className="p-8 rounded-2xl border-2 border-cyan-500/30 bg-black/95 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.9)] hover:border-cyan-400 hover:shadow-[0_0_35px_rgba(34,211,238,0.2)] transition-all"
             >
               <div className="border-b border-cyan-500/20 pb-3 mb-6">
                 <h3 className="font-mono text-cyan-400 text-sm uppercase tracking-widest font-black flex items-center gap-2">
@@ -601,14 +605,15 @@ function Sections({ activeSection, onContactSubmit }) {
             ].map((skill, index) => (
               <motion.div
                 key={skill.name}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.08 }}
+                initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.15 }}
+                transition={{ type: "spring", stiffness: 100, damping: 15, delay: index * 0.05 }}
+                whileHover={{ y: -6, scale: 1.02 }}
                 className={`p-6 rounded-xl border-2 bg-black/95 backdrop-blur-2xl shadow-[0_10px_30px_rgba(0,0,0,0.8)] transition-all cursor-pointer ${
                   skill.color === "cyan" 
-                    ? "border-cyan-500/30 hover:border-cyan-400 hover:shadow-[0_0_25px_rgba(34,211,238,0.25)]" 
-                    : "border-purple-500/30 hover:border-purple-400 hover:shadow-[0_0_25px_rgba(168,85,247,0.25)]"
+                    ? "border-cyan-500/30 hover:border-cyan-400 hover:shadow-[0_0_30px_rgba(34,211,238,0.3)]" 
+                    : "border-purple-500/30 hover:border-purple-400 hover:shadow-[0_0_30px_rgba(168,85,247,0.3)]"
                 }`}
                 data-interactive
               >
@@ -654,9 +659,10 @@ function Sections({ activeSection, onContactSubmit }) {
                 key={proj.title}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.08 }}
-                className="p-6 rounded-2xl border-2 border-cyan-500/20 hover:border-cyan-400 bg-black/95 backdrop-blur-2xl shadow-[0_15px_40px_rgba(0,0,0,0.8)] hover:shadow-[0_0_30px_rgba(34,211,238,0.25)] transition-all flex flex-col justify-between group"
+                viewport={{ once: false, amount: 0.15 }}
+                transition={{ type: "spring", stiffness: 100, damping: 15, delay: index * 0.05 }}
+                whileHover={{ y: -8, scale: 1.02 }}
+                className="p-6 rounded-2xl border-2 border-cyan-500/20 hover:border-cyan-400 bg-black/95 backdrop-blur-2xl shadow-[0_15px_40px_rgba(0,0,0,0.8)] hover:shadow-[0_0_35px_rgba(34,211,238,0.3)] transition-all flex flex-col justify-between group cursor-pointer"
               >
                 <div>
                   <div className="flex items-center justify-between mb-3">
@@ -734,8 +740,16 @@ function Sections({ activeSection, onContactSubmit }) {
             </h3>
 
             <div className="space-y-4">
-              {focusAreas.map((area) => (
-                <div key={area.title} className="flex flex-col sm:flex-row sm:items-center justify-between p-4 rounded-xl bg-cyan-950/20 border border-white/5 gap-2">
+              {focusAreas.map((area, index) => (
+                <motion.div
+                  key={area.title}
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: false, amount: 0.15 }}
+                  transition={{ type: "spring", stiffness: 100, damping: 15, delay: index * 0.05 }}
+                  whileHover={{ x: 8, scale: 1.01 }}
+                  className="flex flex-col sm:flex-row sm:items-center justify-between p-4 rounded-xl bg-cyan-950/20 border border-white/5 hover:border-cyan-500/20 hover:bg-cyan-900/10 gap-2 cursor-pointer transition-all duration-200"
+                >
                   <div>
                     <span className="font-bold text-sm text-white block">{area.title}</span>
                     <span className="text-xs text-zinc-300">{area.objective}</span>
@@ -743,7 +757,7 @@ function Sections({ activeSection, onContactSubmit }) {
                   <span className={`px-3 py-1 rounded-full border text-xs font-mono font-bold self-start sm:self-auto ${area.color}`}>
                     {area.status}
                   </span>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -801,9 +815,10 @@ function Sections({ activeSection, onContactSubmit }) {
             <motion.div
               initial={{ y: 30, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="p-8 rounded-2xl border-2 border-cyan-500/30 bg-[#040409]/95 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.9)] space-y-6"
+              viewport={{ once: false, amount: 0.15 }}
+              transition={{ type: "spring", stiffness: 100, damping: 15 }}
+              whileHover={{ scale: 1.01 }}
+              className="p-8 rounded-2xl border-2 border-cyan-500/30 bg-[#040409]/95 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.9)] hover:border-cyan-400 hover:shadow-[0_0_35px_rgba(34,211,238,0.2)] transition-all space-y-6"
             >
               <h3 className="font-mono text-xs text-cyan-400 uppercase tracking-widest mb-4 font-black border-b border-cyan-500/20 pb-1">
                 // NEURAL UPLINK DIRECTORY
@@ -878,9 +893,10 @@ function Sections({ activeSection, onContactSubmit }) {
             <motion.div
               initial={{ y: 30, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="p-8 rounded-2xl border-2 border-purple-500/30 bg-[#040409]/95 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.9)]"
+              viewport={{ once: false, amount: 0.15 }}
+              transition={{ type: "spring", stiffness: 100, damping: 15, delay: 0.1 }}
+              whileHover={{ scale: 1.01 }}
+              className="p-8 rounded-2xl border-2 border-purple-500/30 bg-[#040409]/95 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.9)] hover:border-purple-400 hover:shadow-[0_0_35px_rgba(168,85,247,0.2)] transition-all"
             >
               <h3 className="font-mono text-xs text-purple-400 uppercase tracking-widest mb-4 font-black border-b border-purple-500/20 pb-1 flex items-center gap-2">
                 <Terminal className="w-4 h-4" /> TRANSMIT SIGNAL TO GULAMGOUS
