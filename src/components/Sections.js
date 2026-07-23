@@ -138,7 +138,7 @@ function Sections({ activeSection, onContactSubmit }) {
       stack: ["Python", "NLP", "HTML5", "Scikit-Learn"],
       description: "AI-powered parsing tool automatically extracting, scoring, and ranking candidate resumes against target job descriptions.",
       repo: "https://github.com/Khangulamgousamjat/Resume-Screening-System",
-      live: "https://resume-screening-system-gk.vercel.app",
+      live: "https://resume-screening-system-red.vercel.app",
       highlight: "NLP Ranking Engine"
     },
     {

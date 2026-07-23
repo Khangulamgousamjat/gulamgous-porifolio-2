@@ -173,7 +173,7 @@ GOAL:
 | 🛡️ [**Event Gous Kratos**](https://github.com/Khangulamgousamjat/Event-Gous-Kratos) | `TypeScript` • `Next.js` | Enterprise event management platform designed for high-concurrency scaling | [Live Demo](https://event-gous-kratos.vercel.app) |
 | 🍎 [**Food Waste Management**](https://github.com/Khangulamgousamjat/food-waste-management) | `TypeScript` • `React` | Real-time surplus food discovery and connection platform for donors and NGOs | [Live Demo](https://hungerlink-gk.vercel.app) |
 | 👥 [**Student Socio Master**](https://github.com/Khangulamgousamjat/student-social-master) | `Next.js` • `Prisma` • `Pusher` | Modern social platform for students featuring nested comments, real-time messaging, and secure authentication | [Live Demo](https://student-social-master-gk.vercel.app) |
-| 📄 [**Resume Screening System**](https://github.com/Khangulamgousamjat/Resume-Screening-System) | `Python` • `NLP` • `HTML` | AI-powered parsing tool screening and ranking candidate resumes | [Live Demo](https://resume-screening-system-gk.vercel.app) |
+| 📄 [**Resume Screening System**](https://github.com/Khangulamgousamjat/Resume-Screening-System) | `Python` • `NLP` • `HTML` | AI-powered parsing tool screening and ranking candidate resumes | [Live Demo](https://resume-screening-system-red.vercel.app) |
 | 🎓 [**Skill Developer**](https://github.com/Khangulamgousamjat/Skill-Developer) | `JavaScript` • `GPT-4` | AI-driven intern development platform with radar metrics and milestones | [Live Demo](https://skill-developer.vercel.app) |
 
 </div>
