@@ -85,7 +85,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="relative min-h-screen bg-[#030014] overflow-x-hidden selection:bg-cyan-500/30 selection:text-cyan-200">
+    <main className="relative min-h-screen bg-black overflow-x-hidden selection:bg-cyan-500/30 selection:text-cyan-200">
       {/* Immersive loading sequence */}
       <LoadingScreen onComplete={() => setIsLoading(false)} />
 
@@ -93,14 +93,6 @@ export default function Home() {
         <>
           {/* Floating glassmorphic header */}
           <Navbar activeSection={activeSection} onNavigate={handleNavigate} />
-
-          {/* 3D background world */}
-          <CanvasContainer 
-            activeSection={activeSection}
-            scrollProgressRef={scrollProgressRef}
-            isPullbackRef={isPullbackRef}
-            mouseRef={mouseRef}
-          />
 
           {/* Core HTML Sections Overlay */}
           <div className="relative z-10 flex flex-col w-full">
