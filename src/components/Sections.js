@@ -4,7 +4,8 @@ import { motion } from "framer-motion";
 import { 
   Mail, ChevronDown, Award, Briefcase, Code, User, Send, CheckCircle, 
   ExternalLink, Cpu, Brain, Database, Layers, GitBranch, Terminal, 
-  Shield, Sparkles, Server, Zap, Target, BookOpen, Activity, Lock, X
+  Shield, Sparkles, Server, Zap, Target, BookOpen, Activity, Lock, X,
+  Globe
 } from "lucide-react";
 import { useState, memo } from "react";
 
@@ -101,6 +102,7 @@ function Sections({ activeSection, onContactSubmit }) {
       stack: ["Python", "LangChain", "Multi-Agent AI", "OpenAI"],
       description: "Multi-agent network automating pharmacy workflows, clinical verification, and prescription analysis with high precision.",
       repo: "https://github.com/Khangulamgousamjat/Pharma-AI-Agent",
+      live: "https://pharma-ai-agent-gk.vercel.app",
       highlight: "Multi-Agent Architecture"
     },
     {
@@ -109,6 +111,7 @@ function Sections({ activeSection, onContactSubmit }) {
       stack: ["TypeScript", "Next.js", "Tailwind CSS", "REST API"],
       description: "Enterprise event management platform engineered for high-concurrency scaling, dynamic registration, and real-time portal monitoring.",
       repo: "https://github.com/Khangulamgousamjat/Event-Gous-Kratos",
+      live: "https://event-gous-kratos.vercel.app",
       highlight: "High Concurrency Engine"
     },
     {
@@ -117,15 +120,17 @@ function Sections({ activeSection, onContactSubmit }) {
       stack: ["TypeScript", "React", "Node.js", "MongoDB"],
       description: "Real-time surplus food discovery and logistics connection platform bridging food donors, redistributors, and NGOs seamlessly.",
       repo: "https://github.com/Khangulamgousamjat/food-waste-management",
+      live: "https://hungerlink-gk.vercel.app",
       highlight: "Real-time Surplus Match"
     },
     {
-      title: "Birthday Wisher",
-      emoji: "🎂",
-      stack: ["TypeScript", "Supabase", "React", "Canvas API"],
-      description: "Interactive Magic Link storytelling flow with real-time canvas animations, custom media delivery, and secure authentication.",
-      repo: "https://github.com/Khangulamgousamjat/Birthday-wisher-",
-      highlight: "Magic Link & Canvas FX"
+      title: "Student Socio Master",
+      emoji: "👥",
+      stack: ["Next.js", "Prisma", "NextAuth", "PostgreSQL", "Pusher"],
+      description: "Modern social platform for students featuring nested comments, real-time messaging, post visibility controls, and secure NextAuth authentication.",
+      repo: "https://github.com/Khangulamgousamjat/student-social-master",
+      live: "https://student-social-master-gk.vercel.app",
+      highlight: "Real-time Social Engine"
     },
     {
       title: "Resume Screening System",
@@ -133,6 +138,7 @@ function Sections({ activeSection, onContactSubmit }) {
       stack: ["Python", "NLP", "HTML5", "Scikit-Learn"],
       description: "AI-powered parsing tool automatically extracting, scoring, and ranking candidate resumes against target job descriptions.",
       repo: "https://github.com/Khangulamgousamjat/Resume-Screening-System",
+      live: "https://resume-screening-system-gk.vercel.app",
       highlight: "NLP Ranking Engine"
     },
     {
@@ -141,6 +147,7 @@ function Sections({ activeSection, onContactSubmit }) {
       stack: ["JavaScript", "GPT-4 API", "Node.js", "Chart.js"],
       description: "AI-driven intern development & monitoring platform featuring radar competency metrics, learning milestones, and AI feedback.",
       repo: "https://github.com/Khangulamgousamjat/Skill-Developer",
+      live: "https://skill-developer.vercel.app",
       highlight: "GPT-4 Competency Radar"
     }
   ];
@@ -676,15 +683,28 @@ function Sections({ activeSection, onContactSubmit }) {
                   </div>
                 </div>
 
-                <a
-                  href={proj.repo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full py-2.5 px-4 rounded-xl border border-white/20 hover:border-cyan-400 bg-white/5 hover:bg-cyan-500/10 transition-all font-mono text-xs font-bold text-center flex items-center justify-center gap-2 cursor-pointer group-hover:border-cyan-400"
-                  data-interactive
-                >
-                  <GithubIcon className="w-4 h-4 text-cyan-400" /> View Repository <ExternalLink className="w-3.5 h-3.5 text-zinc-400" />
-                </a>
+                <div className="flex gap-3 w-full">
+                  <a
+                    href={proj.repo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 py-2.5 px-3 rounded-xl border border-white/20 hover:border-cyan-400 bg-white/5 hover:bg-cyan-500/10 transition-all font-mono text-xs font-bold text-center flex items-center justify-center gap-2 cursor-pointer group-hover:border-cyan-400"
+                    data-interactive
+                  >
+                    <GithubIcon className="w-4 h-4 text-cyan-400" /> Repo <ExternalLink className="w-3.5 h-3.5 text-zinc-400" />
+                  </a>
+                  {proj.live && (
+                    <a
+                      href={proj.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 py-2.5 px-3 rounded-xl border border-cyan-500/30 hover:border-cyan-400 bg-cyan-950/40 hover:bg-cyan-900/40 transition-all font-mono text-xs font-bold text-center flex items-center justify-center gap-2 cursor-pointer shadow-[0_0_15px_rgba(34,211,238,0.15)]"
+                      data-interactive
+                    >
+                      <Globe className="w-4 h-4 text-cyan-400" /> Live <ExternalLink className="w-3.5 h-3.5 text-zinc-400" />
+                    </a>
+                  )}
+                </div>
               </motion.div>
             ))}
           </div>
